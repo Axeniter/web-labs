@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Citrus{% endblock %}</title>
-    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+    <link rel="stylesheet" href="{% static "css/base.css" %}" />
+    {% block extra_styles %}{% endblock %}
 </head>
 <body>
     <header class="nav-bar">
@@ -16,8 +17,8 @@
                         <img class="logo" src="{% static "images/logo.png" %}" alt="Лого"/>
                         Citrus Blog
                     </a>
-                    <a href="/about" class="nav-link">О нас</a>
-                    <a href="/contacts" class="nav-link">Контакты</a>
+                    <a href="/about" class="nav-link">О проекте</a>
+                    <a href="/contact" class="nav-link">Контакты</a>
                     <a href="/feedback" class="nav-link">Обратная связь</a>
                 </nav>
             </div>

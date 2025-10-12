@@ -1,0 +1,134 @@
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 20px 0;
+}
+
+.page-title {
+    color: #ff6b35;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.3;
+}
+
+.section-title {
+    color: #333;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ff6b35;
+    font-size: 1.5em;
+}
+
+.content-block {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #ff6b35;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.developer-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff6b35;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.developer-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.developer-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.developer-tags {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 0 10px;
+    }
+    
+    .page-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    
+    .developer-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .content-block {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .about-text {
+        font-size: 1em;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.5em;
+    }
+    
+    .section-title {
+        font-size: 1.3em;
+    }
+    
+    .avatar {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .developer-name {
+        font-size: 1.1em;
+    }
+    
+    .content-block {
+        padding: 15px;
+    }
+}

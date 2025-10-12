@@ -1,1 +1,36 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static "css/about.css" %}"/>
+{% endblock %}
+
+{% block main %}
+<div class="main-content">
+    <h1 class="page-title">Citrus Blog - он цитрусовый, типо мандарина, но веб сайт. Ну и немного кислый чтоли.</h1>
+    
+    <div class="content-block developer-section">
+        <h2 class="section-title">Наш единственный разработчик:</h2>
+        <div class="developer-card">
+            <img class="avatar" src="{% static "images/avatar.jpg" %}" alt="Аватар"> 
+            <div class="developer-info">
+                <p class="developer-name">Бахтурин Алексей Евгеньевич</p>
+                <p class="developer-tags">авантюрист🛫, приколист😁 ,математик📊, программист💻</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <h2 class="section-title">О себе</h2>
+        <p>Основной род деятельности - создание игр на Unity. Владею языками: C#, C/C++, Python, Английский, Русский.
+                Создаю 3д модели в Blender. Умею жонглировать и готовить бутерброды. Умею играть в доту на Hoodwink, Arc Warden, Puck,
+                Mirana.
+        </p>
+    </div>
+    
+    <div class="content-block">
+        <h2 class="section-title">Почему работает над сайтом</h2>
+        <p>Заставили писать сайт ради зачёта.</p>
+    </div>
+</div>
+{% endblock %}
