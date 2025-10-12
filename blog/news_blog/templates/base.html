@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Citrus{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+</head>
+<body>
+    <header class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <nav class="nav-menu">
+                    <a href="/" class="nav-logo">
+                        <img class="logo" src="{% static "images/logo.png" %}" alt="Лого"/>
+                        Citrus Blog
+                    </a>
+                    <a href="/about" class="nav-link">О нас</a>
+                    <a href="/contacts" class="nav-link">Контакты</a>
+                    <a href="/feedback" class="nav-link">Обратная связь</a>
+                </nav>
+            </div>
+            <button class="nav-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <main class="content">
+        <div class="content-wrapper">
+            {% block main %}{% endblock %}
+        </div>
+    </main>
+    <footer class="footer-bar">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <a href="/about">О нас</a>
+                <a href="/contacts">Контакты</a>
+                <a href="/feedback">Обратная связь</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Citrus Blog. Никакие права не защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
