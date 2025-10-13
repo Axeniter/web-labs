@@ -1,1 +1,35 @@
 {% extends "base.html" %}
+{% load static %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static "css/feedback.css" %}">
+{% endblock %}
+
+{% block main %}
+<div class="feedback-form-container">
+    <h1 class="feedback-form-title">Обратная связь</h1>
+    
+    <form method="POST" class="feedback-form">
+        {% csrf_token %}
+        <table class="feedback-form-table">
+            {% for field in form %}
+            <tr>
+                <td class="feedback-form-label">
+                    {{ field.label_tag }}
+                </td>
+                <td>
+                    {{ field }}
+                    {% if field.errors %}
+                    <ul class="feedback-errorlist">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" class="feedback-submit-btn">Отправить</button>
+    </form>
+</div>
+{% endblock %}

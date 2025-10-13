@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static "css/feedback_success.css" %}">
+{% endblock %}
+
+{% block main %}
+<div class="feedback-success-container">
+    <div class="feedback-success-icon">✓</div>
+    <h1 class="feedback-success-title">Сообщение отправлено!</h1>
+    
+    <div class="feedback-success-data">
+        <div class="feedback-data-item">
+            <div class="feedback-data-label">Имя:</div>
+            <div class="feedback-data-value">{{ name }}</div>
+        </div>
+        
+        <div class="feedback-data-item">
+            <div class="feedback-data-label">Email:</div>
+            <div class="feedback-data-value">{{ email }}</div>
+        </div>
+        
+        <div class="feedback-data-item">
+            <div class="feedback-data-label">Сообщение:</div>
+            <div class="feedback-data-value">{{ message }}</div>
+        </div>
+    </div>
+    
+    <a href="/feedback" class="feedback-back-btn">Отправить еще одно сообщение</a>
+</div>
+{% endblock %}
