@@ -27,3 +27,6 @@ def feedback(request):
     else:
         form = FeedbackForm()
         return render(request, "feedback.html", {"form": form})
+    
+def article(request, id):
+    return render(request, "article.html", {"id": id})
