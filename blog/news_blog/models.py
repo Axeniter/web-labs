@@ -11,12 +11,12 @@ class Article(models.Model):
         ('other', 'Другое'),
     ]
 
-    id = models.BigAutoField()(primary_key=True)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
+    id = models.BigAutoField(primary_key=True)
+    title = models.CharField(verbose_name="Заголовок", max_length=200)
+    text = models.TextField(verbose_name="Содержимое")
+    created_date = models.DateTimeField(verbose_name="Дата создания", default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='articles')
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='other')
+    category = models.CharField(verbose_name="Категория", max_length=20, choices=CATEGORY_CHOICES, default='other')
     
     class Meta:
         verbose_name = 'Статья'
@@ -25,8 +25,8 @@ class Article(models.Model):
     
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)
-    text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
+    text = models.TextField(verbose_name="Содержимое")
+    created_date = models.DateTimeField(verbose_name="Дата создания", default=timezone.now)
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
