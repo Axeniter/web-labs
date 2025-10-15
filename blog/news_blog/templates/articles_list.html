@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Citrus | {% if category %}{{ category|title }}{% else %}Все статьи{% endif %}{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static "css/articles_list.css" %}"/>
+{% endblock %}
+
+{% block main %}
+<div class="articles-header">
+    <div class="header-main">
+        <h1 class="page-title">
+            {% if category %}
+                {{ category|title }}
+            {% else %}
+                Все статьи
+            {% endif %}
+        </h1>
+    </div>
+    <div class="header-search">
+        <form method="get" class="search-form">
+            <input type="text" name="search" class="search-input" placeholder="Поиск..." value="{{ search_query }}">
+            <button type="submit" class="search-btn">Найти</button>
+        </form>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="categories-filter">
+    <div class="filter-buttons">
+        <a href="{% url 'articles_list' %}" class="filter-btn {% if not category %}active{% endif %}">Все</a>
+        {% for cat_value, cat_name in category_choices %}
+            <a href="{% url 'articles_by_category' cat_value %}" class="filter-btn {% if category == cat_value %}active{% endif %}">{{ cat_name }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="articles-list">
+    {% for article in articles %}
+    <div class="article-card">
+        <div class="article-content">
+            <h3 class="article-title">
+                <a href="{% url 'article_detail' article.id %}">{{ article.title }}</a>
+            </h3>
+            <p class="article-excerpt">{{ article.text|truncatewords:30 }}</p>
+            <div class="article-meta">
+                <div class="meta-info">
+                    <span class="meta-item">Автор: {{ article.author.username }}</span>
+                    <span class="meta-item">{{ article.created_date|date:"d.m.Y H:i" }}</span>
+                    <span class="meta-item">Категория: {{ article.get_category_display }}</span>
+                </div>
+                {% if user == article.author %}
+                <div class="article-actions">
+                    <a href="{% url 'edit_article' article.id %}" class="btn-edit">Редактировать</a>
+                    <a href="{% url 'delete_article' article.id %}" class="btn-delete">Удалить</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="no-articles">
+        Статьи не найдены.
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,270 @@
+.articles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-main {
+    flex: 1;
+    min-width: 200px;
+}
+
+.page-title {
+    color: #333;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-search {
+    flex-shrink: 0;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    min-width: 300px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ffa938;
+    box-shadow: 0 0 0 3px rgba(255, 169, 56, 0.1);
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #ffa938, #ff8c00);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-btn:hover {
+    background: linear-gradient(135deg, #ff8c00, #e67e00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+.section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffa938, transparent);
+    margin: 25px 0;
+}
+
+.categories-filter {
+    margin-bottom: 30px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    border-color: #ffa938;
+    color: #ffa938;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #ffa938, #ff8c00);
+    border-color: #ffa938;
+    color: white;
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.article-content {
+    padding: 25px;
+}
+
+.article-title {
+    margin: 0 0 15px 0;
+}
+
+.article-title a {
+    color: #333;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.article-title a:hover {
+    color: #ffa938;
+}
+
+.article-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    flex: 1;
+}
+
+.meta-item {
+    color: #888;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.article-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-edit {
+    background: linear-gradient(135deg, #ffa938, #ff8c00);
+    color: white;
+}
+
+.btn-edit:hover {
+    background: linear-gradient(135deg, #ff8c00, #e67e00);
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.no-articles {
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    border-left: 4px solid #2196f3;
+}
+
+@media (max-width: 768px) {
+    .articles-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header-search {
+        width: 100%;
+    }
+    
+    .search-form {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .page-title {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .meta-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .article-actions {
+        align-self: stretch;
+        justify-content: center;
+    }
+    
+    .btn-edit,
+    .btn-delete {
+        flex: 1;
+        text-align: center;
+    }
+}
