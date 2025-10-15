@@ -41,7 +41,8 @@ def articles_list(request, category=None):
     if category:
         valid_categories = [choice[0] for choice in Article.CATEGORY_CHOICES]
         if category not in valid_categories:
-            return render(request, 'articles_invalid_category.html', {'category': category})
+            return render(request, 'articles_invalid_category.html', 
+                          {'category': category, 'category_choices': Article.CATEGORY_CHOICES})
         articles = articles.filter(category=category)
     
     search_query = request.GET.get('search', '')

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div>
+    <h4>Категория "{{ category }}" не найдена!</h4>
+    <p>Пожалуйста, выберите одну из доступных категорий:</p>
+    <ul>
+        {% for cat_value, cat_name in category_choices %}
+            <li><a href="{% url 'articles_by_category' cat_value %}">{{ cat_name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

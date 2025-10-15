@@ -1,0 +1,114 @@
+.delete-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.delete-title {
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ffa938;
+    padding-bottom: 15px;
+}
+
+.warning-message {
+    background: #fff3cd;
+    color: #856404;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.warning-message p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.warning-message p:last-child {
+    margin-bottom: 0;
+}
+
+.delete-form {
+    margin-top: 25px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-delete-confirm,
+.btn-cancel {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+}
+
+.btn-delete-confirm {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.btn-delete-confirm:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-cancel {
+    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+    color: white;
+}
+
+.btn-cancel:hover {
+    background: linear-gradient(135deg, #7f8c8d, #6c7b7d);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(127, 140, 141, 0.3);
+}
+
+.btn-delete-confirm:active,
+.btn-cancel:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .delete-container {
+        padding: 20px 15px;
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .delete-title {
+        font-size: 24px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-delete-confirm,
+    .btn-cancel {
+        width: 100%;
+        max-width: 200px;
+    }
+}
