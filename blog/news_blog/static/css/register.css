@@ -1,0 +1,171 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 20px;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ffa938;
+    padding-bottom: 15px;
+}
+
+.auth-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ffa938;
+    box-shadow: 0 0 0 3px rgba(255, 169, 56, 0.1);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    height: 48px;
+}
+
+.form-group select {
+    height: 48px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #ffa938, #ff8c00);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #ff8c00, #e67e00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.help-text {
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background-color: #fdf2f2;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    list-style: none;
+}
+
+.error-message li {
+    margin: 2px 0;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.auth-links p {
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+}
+
+.auth-links a {
+    color: #ffa938;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .auth-form {
+        padding: 30px 20px;
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .auth-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    .btn-submit {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+    
+    .form-group input,
+    .form-group select {
+        font-size: 16px;
+    }
+}

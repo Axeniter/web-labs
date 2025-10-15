@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Citrus | {% if category %}{{ category|title }}{% else %}Все статьи{% endif %}{% endblock %}
+{% block title %}Citrus | {% if category %}{{ category|title }}{% else %}Статьи{% endif %}{% endblock %}
 
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static "css/articles_list.css" %}"/>

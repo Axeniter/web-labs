@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Citrus | Регистрация{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static "css/register.css" %}"/>
+{% endblock %}
+
+{% block main %}
+<div class="auth-container">
+    <div class="auth-form">
+        <h2 class="auth-title">Регистрация</h2>
+        
+        <form method="post" class="auth-form-content">
+            {% csrf_token %}
+            
+            {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <div class="error-message">{{ field.errors }}</div>
+                {% endif %}
+                {% if field.help_text %}
+                    <small class="help-text">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+            
+            <button type="submit" class="btn-submit">Зарегистрироваться</button>
+        </form>
+        
+        <div class="auth-links">
+            <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войдите</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
